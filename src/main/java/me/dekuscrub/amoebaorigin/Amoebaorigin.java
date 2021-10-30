@@ -22,16 +22,18 @@ public class Amoebaorigin implements ModInitializer {
     }
 
     public static void bitePlayer(ServerPlayerEntity player, Entity target) {
-        if (player.isPlayer()) {
-            if (MANIFEST.isActive(player)) {
-                if (target.isPlayer()) {
-                    OriginLayer layer = OriginLayers.getLayer(Identifier.tryParse("origins:origin"));
-                    Origin origin = ModComponents.ORIGIN.get(target).getOrigin(layer);
-                    OriginComponent component = ModComponents.ORIGIN.get(player);
-                    component.setOrigin(layer, origin);
-                    OriginComponent.sync(player);
-                } else {
-                    target.kill();
+        if (Math.random() <= 0.2) {
+            if (player.isPlayer()) {
+                if (MANIFEST.isActive(player)) {
+                    if (target.isPlayer()) {
+                        OriginLayer layer = OriginLayers.getLayer(Identifier.tryParse("origins:origin"));
+                        Origin origin = ModComponents.ORIGIN.get(target).getOrigin(layer);
+                        OriginComponent component = ModComponents.ORIGIN.get(player);
+                        component.setOrigin(layer, origin);
+                        OriginComponent.sync(player);
+                    } else {
+                        target.kill();
+                    }
                 }
             }
         }

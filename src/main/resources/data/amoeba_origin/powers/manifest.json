@@ -1,5 +1,5 @@
 {
   "type": "origins:simple",
   "name": "Manifest",
-  "description": "Bite others to gain their powers, press [] to release your current power"
+  "description": "Bite others to gain their powers, however, you're stuck with them until you bite someone else"
 }
