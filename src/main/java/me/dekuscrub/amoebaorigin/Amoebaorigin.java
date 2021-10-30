@@ -17,7 +17,7 @@ import net.minecraft.util.Identifier;
 
 public class Amoebaorigin implements ModInitializer {
 
-    public static final PowerType<Power> BITE = new PowerTypeReference<Power>(new Identifier("amoebaorigin", "bite"));
+    public static final PowerType<Power> BITE = new PowerTypeReference<Power>(new Identifier("amoeba_origin", "bite"));
 
     @Override
     public void onInitialize() {
