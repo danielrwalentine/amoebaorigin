@@ -15,6 +15,8 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+import java.util.Objects;
+
 public class Amoebaorigin implements ModInitializer {
 
     public static final PowerType<Power> BITE = new PowerTypeReference<Power>(new Identifier("amoeba_origin", "bite"));
@@ -23,17 +25,17 @@ public class Amoebaorigin implements ModInitializer {
     public void onInitialize() {
     }
 
-    public static void bitePlayer(LivingEntity player, Entity target) {
+    public static void bitePlayer(ServerPlayerEntity player, Entity target) {
         if (player.isPlayer()) {
-            ServerPlayerEntity pl = (ServerPlayerEntity) player;
-            if (BITE.isActive(pl)) {
+            if (BITE.isActive(player)) {
                 if (target.isPlayer()) {
                     OriginLayer layer = OriginLayers.getLayer(Identifier.tryParse("origins:origin"));
                     Origin origin = ModComponents.ORIGIN.get(target).getOrigin(layer);
-                    OriginComponent component = ModComponents.ORIGIN.get(pl);
+                    origin.add(BITE);
+                    OriginComponent component = ModComponents.ORIGIN.get(player);
                     component.setOrigin(layer, origin);
-                    OriginComponent.sync(pl);
-                } else if (target.getName() == Text.of("Sheep")) {
+                    OriginComponent.sync(player);
+                } else {
                     target.kill();
                 }
             }
