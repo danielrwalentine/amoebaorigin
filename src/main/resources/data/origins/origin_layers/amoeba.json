@@ -1,0 +1,17 @@
+{
+  "order": 3,
+  "replace": false,
+  "origins": [
+    {
+      "condition": {
+        "type": "origins:origin",
+        "origin": "amoeba_origin:a",
+        "layer": "origins:origin"
+      },
+      "origins": [
+        "amoeba_origin:amoeban"
+      ]
+    }
+  ],
+  "name": "True Origin"
+}
