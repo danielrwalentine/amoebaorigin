@@ -3,6 +3,7 @@
 
 Currently Version 1.0
 
-Powerlist:
-
-Manifest - Every time you hit another player, you have a 20% change to take their origin, you cannot switch back until you find another player with a different origin (this is to prevent you from pressing a button to suddenly get rid of all the drawbacks from the ability you had)
+PowerList:
+ - Manifest - Every time you hit someone you have a 20% chance to take their origin (Works with all origins including ones added from datapacks and addons),
+    you cannot get rid of this origin without hitting someone else and taking their power because if you could just get rid of all your downsides suddenly, 
+    you wouldn't ever really suffer from the downsides of other origins.
