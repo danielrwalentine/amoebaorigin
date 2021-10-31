@@ -31,8 +31,6 @@ public class Amoebaorigin implements ModInitializer {
                         OriginComponent component = ModComponents.ORIGIN.get(player);
                         component.setOrigin(layer, origin);
                         OriginComponent.sync(player);
-                    } else {
-                        target.kill();
                     }
                 }
             }
