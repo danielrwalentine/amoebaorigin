@@ -12,10 +12,7 @@ import io.github.apace100.origins.registry.ModComponents;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-
-import java.util.Objects;
 
 public class Amoebaorigin implements ModInitializer {
 
