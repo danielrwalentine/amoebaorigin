@@ -1,5 +1,9 @@
 {
-  "type": "origins:simple",
+  "type": "origins:modify_exhaustion",
+  "modifier": {
+    "operation": "multiply_base",
+    "value": 1.5
+  },
   "name": "Gluttony",
-  "description": "You can eat everything but you get hungry faster"
+  "description": "You get hungry faster"
 }
