@@ -6,6 +6,6 @@ PowerList:
     you cannot get rid of this origin without hitting someone else and taking their power because if you could just get rid of all your downsides suddenly, 
     you wouldn't ever really suffer from the downsides of other origins. All default origins are obtainable from default mobs.
     
- - Gluttony - Coming soon
+ - Gluttony - You get hungry at 1.5 times the normal rate
 
     (Currently looking for more ideas for powers)
