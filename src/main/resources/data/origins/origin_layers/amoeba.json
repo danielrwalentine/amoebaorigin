@@ -5,7 +5,7 @@
     {
       "condition": {
         "type": "origins:origin",
-        "origin": "amoeba_origin:a",
+        "origin": "amoeba_origin:amoeban_dummy",
         "layer": "origins:origin"
       },
       "origins": [

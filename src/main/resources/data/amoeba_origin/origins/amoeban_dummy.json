@@ -1,0 +1,13 @@
+{
+  "powers": [
+    "amoeba_origin:manifest_dummy",
+    "amoeba_origin:gluttony_dummy",
+    "amoeba_origin:single_celled_dummy",
+    "amoeba_origin:fluid_body_dummy"
+  ],
+  "icon": "minecraft:bundle",
+  "order": 9,
+  "impact": 3,
+  "name": "Amoeban",
+  "description": "Take power form the things you eat"
+}

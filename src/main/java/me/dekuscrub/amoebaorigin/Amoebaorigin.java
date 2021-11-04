@@ -27,43 +27,49 @@ public class Amoebaorigin implements ModInitializer {
         OriginLayer layer = OriginLayers.getLayer(Identifier.tryParse("origins:origin"));
         OriginComponent component = ModComponents.ORIGIN.get(player);
 
-        if (Math.random() <= 0.2) {
-            if (player.isPlayer()) {
-                if (player.getInventory().getMainHandStack() == ItemStack.EMPTY) {
-                    if (MANIFEST.isActive(player)) {
-                        if (target.isPlayer()) {
-                            Origin origin = ModComponents.ORIGIN.get(target).getOrigin(layer);
-                            component.setOrigin(layer, origin);
-                            OriginComponent.sync(player);
-                        } else if (target.toString().contains("Phantom")) {
-                            if (Math.random() <= 0.5) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:phantom")));
+        if (player.isPlayer()) {
+            if (MANIFEST.isActive(player)) {
+                if (player.getHungerManager().isNotFull()) {
+                    if (player.getInventory().getMainHandStack() == ItemStack.EMPTY) {
+                        player.getHungerManager().add(1, 0);
+                        if (Math.random() <= 0.2) {
+                            if (target.isPlayer()) {
+                                Origin origin = ModComponents.ORIGIN.get(target).getOrigin(layer);
+                                component.setOrigin(layer, origin);
                                 OriginComponent.sync(player);
-                            } else {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:elytrian")));
+                            } else if (target.toString().contains("Phantom")) {
+                                if (Math.random() <= 0.5) {
+                                    component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:phantom")));
+                                    OriginComponent.sync(player);
+                                } else {
+                                    component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:elytrian")));
+                                    OriginComponent.sync(player);
+                                }
+                            } else if (target.toString().contains("Spider")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:arachnid")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Blaze")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:blazeborn")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Shulker")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:shulk")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Enderman")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:enderian")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Chicken")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:avian")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Cat")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:feline")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Dolphin")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:merling")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("villager")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:human")));
                                 OriginComponent.sync(player);
                             }
-                        } else if (target.toString().contains("Spider")) {
-                            component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:arachnid")));
-                            OriginComponent.sync(player);
-                        } else if (target.toString().contains("Blaze")) {
-                            component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:blazeborn")));
-                            OriginComponent.sync(player);
-                        } else if (target.toString().contains("Shulker")) {
-                            component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:shulk")));
-                            OriginComponent.sync(player);
-                        } else if (target.toString().contains("Enderman")) {
-                            component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:enderian")));
-                            OriginComponent.sync(player);
-                        } else if (target.toString().contains("Chicken")) {
-                            component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:avian")));
-                            OriginComponent.sync(player);
-                        } else if (target.toString().contains("Cat")) {
-                            component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:feline")));
-                            OriginComponent.sync(player);
-                        } else if (target.toString().contains("Dolphin")) {
-                            component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:merling")));
-                            OriginComponent.sync(player);
                         }
                     }
                 }
