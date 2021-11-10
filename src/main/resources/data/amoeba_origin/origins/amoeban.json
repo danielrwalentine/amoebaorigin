@@ -3,7 +3,8 @@
     "amoeba_origin:manifest",
     "amoeba_origin:gluttony",
     "amoeba_origin:single_celled",
-    "amoeba_origin:fluid_body"
+    "amoeba_origin:fluid_body",
+    "amoeba_origin:slower_hidden"
   ],
   "icon": "minecraft:bundle",
   "order": 1,
