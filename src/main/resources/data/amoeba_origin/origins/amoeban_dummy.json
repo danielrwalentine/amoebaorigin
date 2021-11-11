@@ -1,7 +1,6 @@
 {
   "powers": [
     "amoeba_origin:manifest_dummy",
-    "amoeba_origin:gluttony_dummy",
     "amoeba_origin:single_celled_dummy",
     "amoeba_origin:fluid_body_dummy"
   ],
