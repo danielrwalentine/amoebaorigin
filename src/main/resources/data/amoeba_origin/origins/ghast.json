@@ -1,0 +1,13 @@
+{
+  "powers": [
+    "amoeba_origin:flight",
+    "amoeba_origin:freeze_in_overworld",
+    "origins:fire_immunity",
+    "origins:nether_spawn"
+  ],
+  "icon": "minecraft:fire_charge",
+  "order": 1,
+  "impact": 3,
+  "name": "Ghast",
+  "description": "You're a ghast"
+}

@@ -1,0 +1,11 @@
+{
+  "powers": [
+    "origins:fire_immunity",
+    "origins:nether_spawn"
+  ],
+  "icon": "minecraft:golden_sword",
+  "order": 1,
+  "impact": 3,
+  "name": "Piglin",
+  "description": "You're a piglin"
+}

@@ -1,0 +1,12 @@
+{
+  "powers": [
+    "amoeba_origin:stew",
+    "origins:natural_armor",
+    "origins:vegetarian"
+  ],
+  "icon": "minecraft:red_mushroom",
+  "order": 1,
+  "impact": 3,
+  "name": "Mooshroom",
+  "description": "You're a mooshroom"
+}

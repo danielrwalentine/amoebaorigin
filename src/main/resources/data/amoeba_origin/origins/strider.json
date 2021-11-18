@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "amoeba_origin:rideable",
+    "amoeba_origin:walk_on_lava",
+    "amoeba_origin:slow_on_land",
+    "origins:fire_immunity",
+    "origins:water_vulnerability"
+  ],
+  "icon": "minecraft:warped_fungus",
+  "order": 1,
+  "impact": 3,
+  "name": "Strider",
+  "description": "You're a strider"
+}

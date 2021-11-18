@@ -1,0 +1,9 @@
+{
+  "powers": [
+  ],
+  "icon": "minecraft:porkchop",
+  "order": 1,
+  "impact": 3,
+  "name": "Pig",
+  "description": "You're a pig"
+}

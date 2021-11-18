@@ -63,11 +63,46 @@ public class Amoebaorigin implements ModInitializer {
                             } else if (target.toString().contains("Cat")) {
                                 component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:feline")));
                                 OriginComponent.sync(player);
+                            } else if (target.toString().contains("Ocelot")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:feline")));
+                                OriginComponent.sync(player);
                             } else if (target.toString().contains("Dolphin")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:merling")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Turtle")) {
                                 component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:merling")));
                                 OriginComponent.sync(player);
                             } else if (target.toString().contains("villager")) {
                                 component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:human")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Bat")) {
+                                if (Math.random() <= 0.1) {
+                                    component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:elytrian")));
+                                    OriginComponent.sync(player);
+                                }
+                            } else if (target.toString().contains("Pig")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:pig")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Cow")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:cow")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("MooShroom")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:mooshroom")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Creeper")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:creeper")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Wither_Skeleton")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:wither_skeleton")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Skeleton")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:skeleton")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Zombie")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:zombie")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Ghast")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:ghast")));
                                 OriginComponent.sync(player);
                             }
                         }

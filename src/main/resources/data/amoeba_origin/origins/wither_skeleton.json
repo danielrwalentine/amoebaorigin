@@ -1,0 +1,15 @@
+{
+  "powers": [
+    "origins:burn_in_daylight",
+    "origins:extra_reach",
+    "origins:more_kinetic_damage",
+    "origins:fire_immunity",
+    "origins:nether_spawn",
+    "origins:hotblooded"
+  ],
+  "icon": "minecraft:stone_sword",
+  "order": 1,
+  "impact": 3,
+  "name": "Wither Skeleton",
+  "description": "You're a wither skeleton"
+}

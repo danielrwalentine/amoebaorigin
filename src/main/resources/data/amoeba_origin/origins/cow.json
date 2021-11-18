@@ -1,0 +1,12 @@
+{
+  "powers": [
+    "amoeba_origin:milk",
+    "origins:natural_armor",
+    "origins:vegetarian"
+  ],
+  "icon": "minecraft:steak",
+  "order": 1,
+  "impact": 1,
+  "name": "Cow",
+  "description": "You're a cow"
+}
