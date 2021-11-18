@@ -6,7 +6,7 @@
   ],
   "icon": "minecraft:red_mushroom",
   "order": 1,
-  "impact": 3,
+  "impact": 1,
   "name": "Mooshroom",
   "description": "You're a mooshroom"
 }

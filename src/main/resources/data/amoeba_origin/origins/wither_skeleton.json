@@ -9,7 +9,7 @@
   ],
   "icon": "minecraft:stone_sword",
   "order": 1,
-  "impact": 3,
+  "impact": 2,
   "name": "Wither Skeleton",
   "description": "You're a wither skeleton"
 }

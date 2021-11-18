@@ -6,7 +6,7 @@
   ],
   "icon": "minecraft:spider_eye",
   "order": 1,
-  "impact": 3,
+  "impact": 1,
   "name": "Witch",
   "description": "You're a witch"
 }

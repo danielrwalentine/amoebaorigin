@@ -5,7 +5,7 @@
   ],
   "icon": "minecraft:golden_sword",
   "order": 1,
-  "impact": 3,
+  "impact": 2,
   "name": "Piglin",
   "description": "You're a piglin"
 }

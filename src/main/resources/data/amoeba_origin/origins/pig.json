@@ -1,9 +1,11 @@
 {
   "powers": [
+    "amoeba_origin:porkchop",
+    "origins:vegetarian"
   ],
   "icon": "minecraft:porkchop",
   "order": 1,
-  "impact": 3,
+  "impact": 1,
   "name": "Pig",
   "description": "You're a pig"
 }
