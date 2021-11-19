@@ -1,5 +1,6 @@
 {
   "powers": [
+    "amoeba_origin:fireball",
     "amoeba_origin:flight",
     "amoeba_origin:freeze_in_overworld",
     "origins:fire_immunity",

@@ -4,7 +4,7 @@
     "origins:natural_armor",
     "origins:vegetarian"
   ],
-  "icon": "minecraft:steak",
+  "icon": "minecraft:beef",
   "order": 1,
   "impact": 1,
   "name": "Cow",

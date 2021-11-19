@@ -2,8 +2,7 @@
   "powers": [
     "amoeba_origin:manifest",
     "amoeba_origin:single_celled",
-    "amoeba_origin:fluid_body",
-    "amoeba_origin:slower_hidden"
+    "amoeba_origin:fluid_body"
   ],
   "icon": "minecraft:bundle",
   "order": 1,
