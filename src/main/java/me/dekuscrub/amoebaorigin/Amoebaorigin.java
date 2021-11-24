@@ -20,8 +20,10 @@ public class Amoebaorigin implements ModInitializer {
     public static final PowerType<Power> MANIFEST = new PowerTypeReference<Power>(new Identifier("amoeba_origin", "manifest"));
 
     public static void resetOrigin(ServerPlayerEntity player) {
-        ModComponents.ORIGIN.get(player).setOrigin(OriginLayers.getLayer(Identifier.tryParse("origins:origin")), OriginRegistry.get(Identifier.tryParse("origins:human")));
-        OriginComponent.sync(player);
+        if (MANIFEST.isActive(player)) {
+            ModComponents.ORIGIN.get(player).setOrigin(OriginLayers.getLayer(Identifier.tryParse("origins:origin")), OriginRegistry.get(Identifier.tryParse("origins:human")));
+            OriginComponent.sync(player);
+        }
     }
 
     @Override

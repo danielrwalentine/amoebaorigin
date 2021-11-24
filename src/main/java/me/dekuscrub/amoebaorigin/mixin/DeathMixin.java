@@ -1,7 +1,7 @@
 package me.dekuscrub.amoebaorigin.mixin;
 
 import me.dekuscrub.amoebaorigin.Amoebaorigin;
-import net.minecraft.entity.Entity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -14,7 +14,7 @@ import java.util.Objects;
 public class DeathMixin {
 
     @Inject(method = "onDeath", at = @At("HEAD"))
-    private void attack(Entity target, CallbackInfo ci) {
+    private void onDeath(DamageSource source, CallbackInfo ci) {
         Amoebaorigin.resetOrigin(Objects.requireNonNull((ServerPlayerEntity)(Object)this));
     }
 }

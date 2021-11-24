@@ -2,7 +2,6 @@
   "powers": [
     "amoeba_origin:rideable",
     "amoeba_origin:walk_on_lava",
-    "amoeba_origin:slow_on_land",
     "origins:fire_immunity",
     "origins:water_vulnerability",
     "origins:nether_spawn"

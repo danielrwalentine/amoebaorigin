@@ -6,8 +6,8 @@
     "permission_level": 4
   },
   "entity_action_lost": {
-    "type": "scale reset",
-    "command": "team leave @s",
+    "type": "origins:execute_command",
+    "command": "scale reset @s",
     "permission_level": 4
   },
   "execute_chosen_when_orb": true,

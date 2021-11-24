@@ -4,7 +4,8 @@
   "package": "me.dekuscrub.amoebaorigin.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "BiteMixin"
+    "BiteMixin",
+    "DeathMixin"
   ],
   "client": [
   ],
