@@ -8,5 +8,6 @@
   "order": 1,
   "impact": 1,
   "name": "Cow",
-  "description": "You're a cow"
+  "description": "You're a cow",
+  "unchoosable": true
 }

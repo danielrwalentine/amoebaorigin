@@ -2,7 +2,9 @@
   "powers": [
     "amoeba_origin:fireball",
     "amoeba_origin:flight",
-    "amoeba_origin:freeze_in_overworld",
+    "amoeba_origin:nether_bound",
+    "amoeba_origin:wide_hidden",
+    "amoeba_origin:slowness_hidden",
     "origins:fire_immunity",
     "origins:nether_spawn"
   ],

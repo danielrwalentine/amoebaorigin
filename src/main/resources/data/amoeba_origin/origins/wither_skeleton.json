@@ -11,5 +11,6 @@
   "order": 1,
   "impact": 2,
   "name": "Wither Skeleton",
-  "description": "You're a wither skeleton"
+  "description": "You're a wither skeleton",
+  "unchoosable": true
 }

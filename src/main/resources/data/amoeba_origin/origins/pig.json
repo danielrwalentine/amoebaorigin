@@ -7,5 +7,6 @@
   "order": 1,
   "impact": 1,
   "name": "Pig",
-  "description": "You're a pig"
+  "description": "You're a pig",
+  "unchoosable": true
 }

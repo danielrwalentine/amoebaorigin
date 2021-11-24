@@ -6,5 +6,6 @@
   "order": 1,
   "impact": 1,
   "name": "Creeper",
-  "description": "You're a creeper"
+  "description": "You're a creeper",
+  "unchoosable": true
 }

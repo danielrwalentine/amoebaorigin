@@ -10,5 +10,6 @@
   "order": 1,
   "impact": 1,
   "name": "Zombie",
-  "description": "You're a zombie"
+  "description": "You're a zombie",
+  "unchoosable": true
 }

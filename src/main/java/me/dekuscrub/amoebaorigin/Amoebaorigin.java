@@ -19,6 +19,11 @@ public class Amoebaorigin implements ModInitializer {
 
     public static final PowerType<Power> MANIFEST = new PowerTypeReference<Power>(new Identifier("amoeba_origin", "manifest"));
 
+    public static void resetOrigin(ServerPlayerEntity player) {
+        ModComponents.ORIGIN.get(player).setOrigin(OriginLayers.getLayer(Identifier.tryParse("origins:origin")), OriginRegistry.get(Identifier.tryParse("origins:human")));
+        OriginComponent.sync(player);
+    }
+
     @Override
     public void onInitialize() {
     }
@@ -29,9 +34,9 @@ public class Amoebaorigin implements ModInitializer {
 
         if (player.isPlayer()) {
             if (MANIFEST.isActive(player)) {
-                if (player.getHungerManager().isNotFull()) {
+                if (player.getHungerManager().getFoodLevel() > 0) {
                     if (player.getInventory().getMainHandStack() == ItemStack.EMPTY) {
-                        player.getHungerManager().add(1, 0);
+                        player.getHungerManager().add(-1, 0);
                         if (Math.random() <= 0.2) {
                             if (target.isPlayer()) {
                                 Origin origin = ModComponents.ORIGIN.get(target).getOrigin(layer);
@@ -45,6 +50,9 @@ public class Amoebaorigin implements ModInitializer {
                                     component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:elytrian")));
                                     OriginComponent.sync(player);
                                 }
+                            } else if (target.toString().contains("Ghost")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:phantom")));
+                                OriginComponent.sync(player);
                             } else if (target.toString().contains("Spider")) {
                                 component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:arachnid")));
                                 OriginComponent.sync(player);
@@ -58,6 +66,12 @@ public class Amoebaorigin implements ModInitializer {
                                 component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:enderian")));
                                 OriginComponent.sync(player);
                             } else if (target.toString().contains("Chicken")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:avian")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Duck")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:avian")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Goose")) {
                                 component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:avian")));
                                 OriginComponent.sync(player);
                             } else if (target.toString().contains("Cat")) {
@@ -103,6 +117,9 @@ public class Amoebaorigin implements ModInitializer {
                                 OriginComponent.sync(player);
                             } else if (target.toString().contains("Ghast")) {
                                 component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:ghast")));
+                                OriginComponent.sync(player);
+                            } else if (target.toString().contains("Witch")) {
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:witch")));
                                 OriginComponent.sync(player);
                             }
                         }

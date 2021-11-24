@@ -8,5 +8,6 @@
   "order": 1,
   "impact": 1,
   "name": "Mooshroom",
-  "description": "You're a mooshroom"
+  "description": "You're a mooshroom",
+  "unchoosable": true
 }
