@@ -51,7 +51,7 @@ public class Amoebaorigin implements ModInitializer {
                     if (player.getInventory().getMainHandStack() == ItemStack.EMPTY) {
                         player.getHungerManager().add(-1, 0);
                         if (Math.random() <= 0.2) {
-                            player.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING));
+                            player.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 1500));
                             if (target.isPlayer()) {
                                 Origin origin = ModComponents.ORIGIN.get(target).getOrigin(layer);
                                 component.setOrigin(layer, origin);

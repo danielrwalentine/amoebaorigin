@@ -1,6 +1,7 @@
 {
   "powers": [
     "amoeba_origin:stew",
+    "amoeba_origin:stew_generation",
     "origins:natural_armor",
     "origins:vegetarian"
   ],
