@@ -15,6 +15,8 @@ public class StatusEffectMixin {
 
     @Inject(method = "onRemoved", at = @At("HEAD"))
     private void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier, CallbackInfo ci) {
-        Amoebaorigin.updateOrigin((ServerPlayerEntity) entity);
+        if (entity.isPlayer()) {
+            Amoebaorigin.updateOrigin((ServerPlayerEntity) entity);
+        }
     }
 }
