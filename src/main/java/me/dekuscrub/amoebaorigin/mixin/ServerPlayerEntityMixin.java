@@ -23,9 +23,4 @@ public class ServerPlayerEntityMixin {
     private void onDeath(DamageSource source, CallbackInfo ci) {
         Amoebaorigin.resetOrigin(Objects.requireNonNull((ServerPlayerEntity)(Object)this));
     }
-
-    @Inject(method = "playerTick", at = @At("HEAD"))
-    private void playerTick(CallbackInfo ci) {
-        Amoebaorigin.updateOrigin(Objects.requireNonNull((ServerPlayerEntity)(Object)this));
-    }
 }
