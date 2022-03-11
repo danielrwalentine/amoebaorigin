@@ -14,15 +14,13 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
-import java.util.Objects;
-
 public class Amoebaorigin implements ModInitializer {
 
-    public static final PowerType<Power> MANIFEST = new PowerTypeReference<Power>(new Identifier("amoeba_origin", "manifest"));
+    public static final PowerType<Power> MANIFEST = new PowerTypeReference<>(new Identifier("amoeba_origin", "manifest"));
+    public static boolean manifest = false;
 
     @Override
     public void onInitialize() {
@@ -32,12 +30,15 @@ public class Amoebaorigin implements ModInitializer {
         if (MANIFEST.isActive(player)) {
             ModComponents.ORIGIN.get(player).setOrigin(OriginLayers.getLayer(Identifier.tryParse("origins:origin")), OriginRegistry.get(Identifier.tryParse("origins:human")));
             OriginComponent.sync(player);
+            manifest = false;
         }
     }
 
     public static void updateOrigin(ServerPlayerEntity player) {
-        if (!player.hasStatusEffect(StatusEffects.GLOWING)) {
-            Amoebaorigin.resetOrigin(player);
+        if (manifest) {
+            if (!player.hasStatusEffect(StatusEffects.GLOWING)) {
+                Amoebaorigin.resetOrigin(player);
+            }
         }
     }
 
@@ -131,6 +132,7 @@ public class Amoebaorigin implements ModInitializer {
                                 component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:witch")));
                                 OriginComponent.sync(player);
                             }
+                            manifest = true;
                         }
                     }
                 }
