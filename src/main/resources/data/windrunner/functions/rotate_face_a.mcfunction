@@ -1,0 +1,6 @@
+gravity set down @a[scores={rotation=0}]
+gravity set up @a[scores={rotation=1}]
+gravity set north @a[scores={rotation=2}]
+gravity set south @a[scores={rotation=3}]
+gravity set west @a[scores={rotation=4}]
+gravity set east @a[scores={rotation=5}]
