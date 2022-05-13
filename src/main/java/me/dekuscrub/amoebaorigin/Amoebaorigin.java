@@ -1,5 +1,9 @@
 package me.dekuscrub.amoebaorigin;
 
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonSerializer;
 import io.github.apace100.apoli.power.Power;
 import io.github.apace100.apoli.power.PowerType;
 import io.github.apace100.apoli.power.PowerTypeReference;
@@ -15,12 +19,14 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class Amoebaorigin implements ModInitializer {
 
     public static final PowerType<Power> MANIFEST = new PowerTypeReference<>(new Identifier("amoeba_origin", "manifest"));
     public static boolean manifest = false;
+    public static JsonObject config = new JsonParser().parse("resources/assets/amoebaorigin/config/modconfig.json").getAsJsonObject();
 
     @Override
     public void onInitialize() {
@@ -108,7 +114,7 @@ public class Amoebaorigin implements ModInitializer {
                                 component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:pig")));
                                 OriginComponent.sync(player);
                             } else if (target.toString().contains("Cow")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:cow")));
+                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse(config.getAsJsonObject("minecraft.entity.cow").getAsString())));
                                 OriginComponent.sync(player);
                             } else if (target.toString().contains("MooShroom")) {
                                 component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:mooshroom")));
