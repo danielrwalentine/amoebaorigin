@@ -1,26 +1,23 @@
 {
   "schemaVersion": 1,
-  "id": "amoebaorigin",
+  "id": "windrunner",
   "version": "${version}",
-  "name": "Amoebaorigin",
+  "name": "Windrunner",
   "description": "",
   "authors": [
     "DanielW"
   ],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/amoebaorigin/icon.png",
+  "icon": "assets/windrunner/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "me.dekuscrub.amoebaorigin.client.AmoebaoriginClient"
-    ],
     "main": [
-      "me.dekuscrub.amoebaorigin.Amoebaorigin"
+      "me.dekuscrub.windrunner.Windrunner"
     ]
   },
   "mixins": [
-    "amoebaorigin.mixins.json"
+    "mod.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.11.7",

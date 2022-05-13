@@ -1,0 +1,12 @@
+{
+  "powers": [
+    "windrunner:rotate_face",
+    "windrunner:rotate_other",
+    "origins:ender_particles"
+  ],
+  "icon": "gravitychanger:gravity_changer_up",
+  "order": 3,
+  "impact": 3,
+  "name": "WindRunner",
+  "description": "Change your gravity at will"
+}
