@@ -1,11 +1,9 @@
 {
-  "required": true,
+  "required": false,
   "minVersion": "0.8",
-  "package": "me.dekuscrub.amoebaorigin.mixin",
+  "package": "me.dekuscrub.windrunner.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "ServerPlayerEntityMixin",
-    "StatusEffectMixin"
   ],
   "client": [
   ],
