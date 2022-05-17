@@ -1,9 +1,5 @@
 package me.dekuscrub.amoebaorigin;
 
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.google.gson.JsonSerializer;
 import io.github.apace100.apoli.power.Power;
 import io.github.apace100.apoli.power.PowerType;
 import io.github.apace100.apoli.power.PowerTypeReference;
@@ -19,17 +15,30 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+import org.wallentines.midnightcore.api.text.MStyle;
+import org.wallentines.midnightcore.api.text.MTextComponent;
+import org.wallentines.midnightcore.api.text.MTranslateComponent;
+import org.wallentines.midnightcore.fabric.player.FabricPlayer;
+import org.wallentines.midnightlib.config.FileConfig;
+import org.wallentines.midnightlib.math.Color;
+
+import java.io.File;
 
 public class Amoebaorigin implements ModInitializer {
 
+    private static final FileConfig config = FileConfig.findOrCreate("amoeba_origin", new File("config"));
     public static final PowerType<Power> MANIFEST = new PowerTypeReference<>(new Identifier("amoeba_origin", "manifest"));
     public static boolean manifest = false;
-    public static JsonObject config = new JsonParser().parse("resources/assets/amoebaorigin/config/modconfig.json").getAsJsonObject();
 
     @Override
     public void onInitialize() {
+    }
+
+    public static void setConfigValue(String key, String value) {
+        config.getRoot().set(key, value);
+        config.save();
     }
 
     public static void resetOrigin(ServerPlayerEntity player) {
@@ -59,85 +68,18 @@ public class Amoebaorigin implements ModInitializer {
                         player.getHungerManager().add(-1, 0);
                         if (Math.random() <= 0.2) {
                             player.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 30000));
+                            Origin origin;
                             if (target.isPlayer()) {
-                                Origin origin = ModComponents.ORIGIN.get(target).getOrigin(layer);
-                                component.setOrigin(layer, origin);
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Phantom")) {
-                                if (Math.random() <= 0.5) {
-                                    component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:phantom")));
-                                    OriginComponent.sync(player);
-                                } else {
-                                    component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:elytrian")));
-                                    OriginComponent.sync(player);
-                                }
-                            } else if (target.toString().contains("Ghost")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:phantom")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Spider")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:arachnid")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Blaze")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:blazeborn")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Shulker")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:shulk")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Enderman")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:enderian")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Chicken")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:avian")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Duck")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:avian")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Goose")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:avian")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Cat")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:feline")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Ocelot")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:feline")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Dolphin")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:merling")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Turtle")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:merling")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("villager")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("origins:human")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Pig")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:pig")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Cow")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse(config.getAsJsonObject("minecraft.entity.cow").getAsString())));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("MooShroom")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:mooshroom")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Creeper")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:creeper")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Wither_Skeleton")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:wither_skeleton")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Skeleton")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:skeleton")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Zombie")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:zombie")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Ghast")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:ghast")));
-                                OriginComponent.sync(player);
-                            } else if (target.toString().contains("Witch")) {
-                                component.setOrigin(layer, OriginRegistry.get(Identifier.tryParse("amoeba_origin:witch")));
-                                OriginComponent.sync(player);
+                                origin = ModComponents.ORIGIN.get(target).getOrigin(layer);
+                            } else {
+                                origin = OriginRegistry.get(Identifier.tryParse(config.getRoot().getString(Registry.ENTITY_TYPE.getId(target.getType()).toString())));
                             }
+                            component.setOrigin(layer, origin);
+                            FabricPlayer fp = FabricPlayer.wrap(player);
+                            MTranslateComponent name = new MTranslateComponent(origin.getName().getKey());
+                            fp.sendActionBar(new MTextComponent("Manifest set to ").withChild(name).withChild(new MTextComponent(", you have 25 minutes")).withStyle(new MStyle().withColor(Color.fromRGBI(6))));
+
+                            OriginComponent.sync(player);
                             manifest = true;
                         }
                     }

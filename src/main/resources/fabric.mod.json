@@ -12,10 +12,7 @@
   "icon": "assets/amoebaorigin/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "me.dekuscrub.amoebaorigin.client.AmoebaoriginClient"
-    ],
-    "main": [
+    "midnightcore": [
       "me.dekuscrub.amoebaorigin.Amoebaorigin"
     ]
   },
