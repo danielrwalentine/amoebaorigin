@@ -14,6 +14,9 @@
   "entrypoints": {
     "midnightcore": [
       "me.dekuscrub.amoebaorigin.Amoebaorigin"
+    ],
+    "modmenu": [
+      "me.dekuscrub.amoebaorigin.ConfigScreen"
     ]
   },
   "mixins": [
