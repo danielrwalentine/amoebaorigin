@@ -12,7 +12,7 @@
   "icon": "assets/amoebaorigin/icon.png",
   "environment": "*",
   "entrypoints": {
-    "midnightcore": [
+    "midnightcore-1.18.2": [
       "me.dekuscrub.amoebaorigin.Amoebaorigin"
     ],
     "modmenu": [
