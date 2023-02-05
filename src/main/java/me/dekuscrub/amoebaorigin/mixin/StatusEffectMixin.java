@@ -21,7 +21,7 @@ public class StatusEffectMixin {
             at = {@At("HEAD")}
     )
     private void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier, CallbackInfo ci) {
-        if (!entity.hasStatusEffect(StatusEffects.GLOWING)) {
+        if (!entity.hasStatusEffect(StatusEffects.UNLUCK)) {
             Amoebaorigin.resetOrigin((ServerPlayerEntity)entity);
         }
     }

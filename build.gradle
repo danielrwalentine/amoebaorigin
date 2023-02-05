@@ -1,6 +1,7 @@
 plugins {
     id 'fabric-loom' version '0.11-SNAPSHOT'
     id 'maven-publish'
+    id 'com.needhamsoftware.unojar' version '1.1.0'
 }
 
 version = project.mod_version
@@ -56,10 +57,7 @@ dependencies {
     // You may need to force-disable transitiveness on them.
     modImplementation "com.github.apace100:origins-fabric:${project.origins_version}"
 
-    modImplementation 'org.wallentines:midnightlib:1.0-SNAPSHOT'
-    modImplementation 'org.wallentines.midnightcore:api:1.0-SNAPSHOT'
-    modImplementation 'org.wallentines.midnightcore:common:1.0-SNAPSHOT'
-    modImplementation 'org.wallentines.midnightcore:fabric:1.0-SNAPSHOT'
+    include modImplementation("org.wallentines:midnightlib:1.0-SNAPSHOT")
 
 }
 

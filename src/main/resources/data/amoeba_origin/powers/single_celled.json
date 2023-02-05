@@ -2,9 +2,9 @@
   "type": "origins:attribute",
   "modifier": {
     "attribute": "minecraft:generic.max_health",
-    "value": -4,
+    "value": -10,
     "operation": "addition"
   },
   "name": "Single Celled",
-  "description": "You have two less hearts than a human"
+  "description": "You have half the health of a human"
 }

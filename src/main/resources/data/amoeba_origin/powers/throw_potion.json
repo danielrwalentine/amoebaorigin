@@ -1,0 +1,15 @@
+{
+  "type": "origins:fire_projectile",
+  "entity_type": "minecraft:potion",
+  "cooldown": 200,
+  "hud_render": {
+    "bar_index": 6
+  },
+  "tag": "{Item: {id:'minecraft:splash_potion', Count: 1b, tag: {Potion: 'minecraft:strong_harming'}}}",
+  "key": {
+    "key": "key.origins.primary_active",
+    "continuous": true
+  },
+  "name": "Armed with Potions",
+  "description": "You can throw an unlimited supply of potions of harming"
+}

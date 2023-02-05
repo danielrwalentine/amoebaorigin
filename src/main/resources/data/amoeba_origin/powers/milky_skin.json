@@ -1,12 +1,19 @@
 {
-  "type": "origins:active_self",
-  "entity_action": {
-    "type": "origins:clear_effect"
-  },
-  "cooldown": 20,
-  "hud_render": {
-    "should_render": false
-  },
-  "name": "Milky_Skin",
-  "description": "You can clear all effects from yourself"
+  "type": "origins:effect_immunity",
+  "effects": [
+    "minecraft:weakness",
+    "minecraft:bad_omen",
+    "minecraft:blindness",
+    "minecraft:darkness",
+    "minecraft:hunger",
+    "minecraft:instant_damage",
+    "minecraft:levitation",
+    "minecraft:mining_fatigue",
+    "minecraft:nausea",
+    "minecraft:poison",
+    "minecraft:slowness",
+    "minecraft:wither"
+  ],
+  "name": "Milky Veins",
+  "description": "You are immune to negative effects"
 }

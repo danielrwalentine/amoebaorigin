@@ -1,6 +1,6 @@
 {
   "powers": [
-    "origins:arcane_skin",
+    "amoeba_origin:throw_potion",
     "origins:cat_vision",
     "origins:hotblooded"
   ],
